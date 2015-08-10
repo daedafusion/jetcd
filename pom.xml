@@ -32,12 +32,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-snapshots</id>
+            <id>sonatype</id>
             <name>Sonatype Nexus Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype-release-staging</id>
+            <id>sonatype</id>
             <name>Nexus Release Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
