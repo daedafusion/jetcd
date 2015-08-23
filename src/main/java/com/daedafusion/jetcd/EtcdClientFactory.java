@@ -9,6 +9,16 @@ public class EtcdClientFactory
 {
     private static EtcdClientFactory ourInstance = new EtcdClientFactory();
 
+    /**
+     * Default client to http://localhost:4001
+     *
+     * System property overrides:
+     *
+     * -DetcdHost overrides hostname
+     * -DetcdPort overrids port
+     *
+     * @return new default client instance
+     */
     public static EtcdClient newInstance()
     {
         return newInstance(String.format("http://%s:%d",
@@ -17,6 +27,12 @@ public class EtcdClientFactory
         );
     }
 
+    /**
+     * Specify etcd server
+     *
+     * @param server ${protocol}://${hostname}:${port}
+     * @return client instance
+     */
     public static EtcdClient newInstance(String server)
     {
         return new EtcdClientImpl(server);
