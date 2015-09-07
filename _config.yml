@@ -1,6 +1,6 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: 'com.daedafusion:jetcd'
-subtitle: 'A etcd client for Java'
+subtitle: 'An etcd client for Java'
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
