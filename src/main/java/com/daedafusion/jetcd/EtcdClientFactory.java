@@ -21,9 +21,10 @@ public class EtcdClientFactory
      */
     public static EtcdClient newInstance()
     {
-        return newInstance(String.format("http://%s:%d",
-                        System.getProperty("etcdHost", "localhost"),
-                        Integer.getInteger("etcdPort", 4001))
+        return newInstance(String.format("%s://%s:%d",
+                        System.getProperty("etcdProtocol", System.getenv().getOrDefault("ETCD_PROTOCOL", "http")),
+                        System.getProperty("etcdHost", System.getenv().getOrDefault("ETCD_HOST", "localhost")),
+                        Integer.getInteger("etcdPort", Integer.parseInt(System.getenv().getOrDefault("ETCD_PORT", "4001"))))
         );
     }
 
