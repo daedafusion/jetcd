@@ -9,5 +9,10 @@ cache:
   directories:
     - $HOME/.m2
 
+before_install:
+  - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+
 after_success:
   - mvn clean test jacoco:report coveralls:report
+  - "[[ $TRAVIS_BRANCH == \"master\" ]] && { mvn clean deploy --settings .travis/settings.xml -Psign -DskipTests=true -B; };"
