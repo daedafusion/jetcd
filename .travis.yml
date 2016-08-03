@@ -15,4 +15,4 @@ before_install:
 
 after_success:
   - mvn clean test jacoco:report coveralls:report
-  - "[[ $TRAVIS_BRANCH == \"master\" ]] && { mvn clean deploy --settings .travis/settings.xml -Psign -DskipTests=true -B; };"
+  - "[[ $TRAVIS_BRANCH == \"master\" ]] && { mvn clean deploy --settings .travis/settings.xml -Psign,sonatype -DskipTests=true -B; };"
