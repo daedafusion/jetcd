@@ -20,7 +20,7 @@ This is a basic client for connecting to etcd.
 <dependency>
     <groupId>com.daedafusion</groupId>
     <artifactId>jetcd</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 </dependency
 ```
 
